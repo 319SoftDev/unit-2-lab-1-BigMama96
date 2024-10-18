@@ -1,10 +1,4 @@
-
 // Mild Challenges 
-
-/// The three siblings get their allowance once a week.
-/// Their current obsession is buying unique card games and collecting shoes.
-/// Below is the total money they split weekly, their names, and the price of
-///     a card game and a pair of shoes.
 
 let weeklyAllowance = 129;
 let sibling1 = "Jordan";
@@ -13,117 +7,175 @@ let sibling3 = "Ricardo Montoya De La Rosa Ramirez";
 let game = 15.99;
 let shoes = 89.78;
 
-
-
 // 1. If divided evenly, how much would each sibling get for the week?
+
+let eachSiblingGets = (weeklyAllowance / 3).toFixed(2);
+console.log(`Each sibling gets: $${eachSiblingGets} `);
 
 // 2. How many games can Jordan buy with their cut?
 
-// 3. The cost of games just went up by a dollar and shoes are on sale at 50% (half) off. Change the variables to their new prices.
+let gamesJordanCanBuy = Math.floor(eachSiblingGets / game);
+console.log(`${sibling1} can buy ${gamesJordanCanBuy} games `);
 
-// 4. Quinn and Ricardo are twins. If they put their money together, how many on sale shoes can they buy in a month (4 weeks)?
+// 3. Update prices
 
-// 5. How many more games can they buy if they put their money together compared to if they had bought games on their own?
+game += 1; 
+// Game price increased by $1
+shoes *= 0.5;
+ // Shoes are now 50% off
 
-// 6. Print out the three siblings' names. "The three siblings are __, __, and ___."
+console.log(`New game price: $${game.toFixed(2)} , New shoes price: $${shoes.toFixed(2)} `);
 
-// 7. Use console.log() and a built-in method to count how many characters are in Ricardo's name.
+// 4. Quinn and Ricardo's combined funds for a month
 
-// 8. Use console.log() and a built-in method to print out the string "RICARDO MONTOYA DE LA ROSA RAMIREZ"
+let combinedFunds = (eachSiblingGets * 2) * 4; 
+// 4 weeks
+let shoesTheyCanBuy = Math.floor(combinedFunds / shoes);
+console.log(`Quinn and Ricardo can buy ${shoesTheyCanBuy} pairs of shoes in a month `);
 
-// 9. Use console.log() and a built-in method to print out the string "ricardo montoya de la rosa ramirez"
+// 5. Compare games bought together vs. alone
 
-// 10. Use console.log() and a built-in method to print out Ricardo's name, but with all the instances of the letter a removed or deleted.
+let gamesRicardoCanBuy = Math.floor(eachSiblingGets / game);
+let gamesQuinnCanBuy = Math.floor(eachSiblingGets / game);
+let totalGamesTogether = Math.floor((eachSiblingGets * 2) / game);
+let additionalGames = totalGamesTogether - (gamesQuinnCanBuy + gamesRicardoCanBuy);
 
-// 11. Use console.log() and a built-in method to print out "De La Rosa"
+console.log(`They can buy ${additionalGames} more games together `);
+
+
+// 6. Print siblings' names
+console.log(`The three siblings are ${sibling1}, ${sibling2}, and ${sibling3}. `);
+
+
+// 7. Count characters in Ricardo's name
+console.log(`Number of characters in Ricardo's name: ${sibling3.length} `);
+
+
+// 8. Print name in uppercase
+console.log(`Uppercase: ${sibling3.toUpperCase()} `);
+
+
+// 9. Print name in lowercase
+
+console.log(`Lowercase: ${sibling3.toLowerCase()} `);
+
+// 10. Print name without 'a'
+console.log(`Without 'a': ${sibling3.replace(/a/gi, '')} `);
+
+
+// 11. Print "De La Rosa"
+console.log(`Extracted: ${sibling3.substring(19, 28)} `);
+
+
 
 // Medium Challenges
 
-// 12. Rewrite these function as an arrow function.
-/// Then, call them with different inputs to check the result.
+// 12. Convert functions to arrow functions
 
-function getRandomNum() {
-    return Math.floor(Math.random() * 100);
-}
-
-function greeting(name) {
-    return `Hello ${name}, I'm glad you can make it!`;
-}
-
-function perfectRoot(x) {
+const getRandomNum = () => Math.floor(Math.random() * 100);
+const greeting = (name) => `Hello ${name}, I'm glad you can make it!`;
+const perfectRoot = (x) => {
     let root = Math.sqrt(x);
-    if (Math.floor(root) === root) {
-        return root;
-    } else {
-        return "No perfect root"
-    }
-}
+    return Math.floor(root) === root ? root : "No perfect root";
+};
 
-// 13. Fix/Finish the following functions.
-/// Then, call them with at least 2 different inputs to ensure they work.
+// Test arrow functions
 
-/// a. Adds 2 numbers and returns the sum
-const addNums = (x, y) => {
-    let sum = x + y;
-}
-// uncomment the line below, to call the function, and add one more function call
-// console.log( addNums(4, 6) );
+console.log(`Random number: ${getRandomNum()} (Random number between 0-99)`);
+console.log(greeting("Joanna")); 
 
 
-/// b. Prints a special message if name is "Beyonce"
+console.log(`Perfect root: ${perfectRoot(16)} (Perfect root check)`);
+
+// 13. Fix/Finish functions
+
+// a. Add two numbers
+
+const addNums = (x, y) => x + y;
+console.log(`Sum of 4 and 6: ${addNums(4, 6)} (Adding two numbers)`);
+console.log(`Sum of 10 and 5: ${addNums(10, 5)} (Adding two numbers)`);
+
+// b. Special message for "Beyonce"
+
 const isBeyonce = (name) => {
-    if( ) { 
-        return "Welcome Queen!";
-    } else {
-        return `Sorry {name}, you're not Beyonce`;
-    }
-}
-// Test "Beyonce" and other names to ensure it works
+    return name === "Beyonce" ? "Welcome Queen!" : `Sorry ${name}, you're not Beyonce`;
+};
+console.log(isBeyonce("Beyonce")); 
 
 
-
-/// c. If the number is even, return the number divided by 2, otherwise, return the number
-/// For example reduceEvens(10) => 5 -- reduceEvens(11) => 11
-const reduceEvens = (x) => {
-    if( ){
-
-    } else {
-        return x;
-    }
-}
-//Write your own function calls
+console.log(isBeyonce("Ian")); 
 
 
-// 14. Write a function called shortenString(string) that returns the first 10 characters of a string if it is longer than 10
-//remove all
-const shortenString = (string) => {
+// c. Reduce evens
 
-}
+const reduceEvens = (x) => (x % 2 === 0 ? x / 2 : x);
+console.log(`Reduce evens for 10: ${reduceEvens(10)} (Even number reduced)`);
+console.log(`Reduce evens for 11: ${reduceEvens(11)} (Odd number unchanged)`);
 
+// 14. Shorten string
 
+const shortenString = (string) => (string.length > 10 ? string.substring(0, 10) : string);
+console.log(`Shortened: "${shortenString("This string is too long")}" (String shortened)`); 
+console.log(`Shortened: "${shortenString("Short")}" (String unchanged)`);
 
 // Spicy Challenges
+
 let burger = 5.99;
 let fries = 3.99;
 let soda = 1.99;
 
-// 15. Write a function buyBurgers(budget) that takes in a budget amount and returns the number of burgers that can be bought.
-/// If no burgers can be bought, return "Sorry, no burgers for you."
+// 15. Buy burgers function
 
 const buyBurgers = (budget) => {
+    const numBurgers = Math.floor(budget / burger);
+    return numBurgers > 0 ? numBurgers : "Sorry, no burgers for you.";
+};
+console.log(`Burgers with $20: ${buyBurgers(20)} (Number of burgers)`); 
+console.log(`Burgers with $5: ${buyBurgers(5)} (Number of burgers)`); 
 
-}
+// 16. Buy meals function
 
-// 16. A meal consists of 1 burger, 1 fry, and 1 soda.
-/// Write a function called buyMeals(budget) that tells the user how many meals they can buy and how much money they will have left over.
-/// Bonus: Round the answer to the nearest penny.
-const buyMeals = (budget) => {
+const buyFood = (budget) => {
+    const mealCost = burger + fries + soda;
+    const meals = Math.floor(budget / mealCost);
+    const leftover = (budget % mealCost).toFixed(2);
+    return `You can buy ${meals} meals and will have $${leftover} left over.`;
+};
+console.log(buyFood(20)); 
+// Meals with budget
+console.log(buyFood(30)); 
+// Meals with budget
 
-}
+// 17. Missing leg function
+const missingLeg = (hypotenuse, leg) => {
+    if (hypotenuse <= leg) {
+        console.log("The hypotenuse must be the largest side.");
+        return;
+    }
+    const missingLegLength = Math.sqrt(hypotenuse ** 2 - leg ** 2);
+    console.log(`Missing leg length: ${missingLegLength} (Calculated using Pythagorean theorem)`);
+};
+missingLeg(5, 3); 
 
+// Missing leg for specific case
 
-// 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
-/// The larger side should be the hypotenuse  
+missingLeg(10, 6);
+
+ // Missing leg for specific case
+
+// 18. Factorial function
+const factorial = (x) => {
+    if (x < 0) return "Invalid input";
+    if (x === 0) return 1;
+    let result = 1;
+    for (let i = 1; i <= x; i++) {
+        result *= i;
+    }
+    return result;
+};
+
+console.log(`Factorial of 3: ${factorial(3)} (3 = 6)`); 
+console.log(`Factorial of 5: ${factorial(5)} (5 = 120)`); 
 
 
 
