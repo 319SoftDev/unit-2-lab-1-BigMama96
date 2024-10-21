@@ -161,9 +161,14 @@ missingLeg(5, 3);
 
 missingLeg(10, 6);
 
- // Missing leg for specific case
 
+
+
+// 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
+/// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
+/// Write a function factorial(x) that finds the factorial of any integer.
 // 18. Factorial function
+
 const factorial = (x) => {
     if (x < 0) return "Invalid input";
     if (x === 0) return 1;
@@ -176,6 +181,7 @@ const factorial = (x) => {
 
 console.log(`Factorial of 3: ${factorial(3)} (3 = 6)`); 
 console.log(`Factorial of 5: ${factorial(5)} (5 = 120)`); 
+
 
 
 
