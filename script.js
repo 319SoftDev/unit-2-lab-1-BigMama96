@@ -128,7 +128,7 @@ let soda = 1.99;
 
 const buyBurgers = (budget) => {
     const numBurgers = Math.floor(budget / burger);
-    return numBurgers > 0 ? numBurgers : "Sorry, no burgers for you.";
+    return numBurgers > 0 ? numBurgers : "Sorry, you need a diet.";
 };
 console.log(`Burgers with $20: ${buyBurgers(20)} (Number of burgers)`); 
 console.log(`Burgers with $5: ${buyBurgers(5)} (Number of burgers)`); 
@@ -181,6 +181,7 @@ const factorial = (x) => {
 
 console.log(`Factorial of 3: ${factorial(3)} (3 = 6)`); 
 console.log(`Factorial of 5: ${factorial(5)} (5 = 120)`); 
+
 
 
 
