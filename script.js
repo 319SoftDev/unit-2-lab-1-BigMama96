@@ -185,6 +185,4 @@ console.log(`Factorial of 5: ${factorial(5)} (5 = 120)`);
 
 
 
-// 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
-/// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
-/// Write a function factorial(x) that finds the factorial of any integer.
+
